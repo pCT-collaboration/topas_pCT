@@ -1,0 +1,24 @@
+includeFile = HUtoMaterialSchneider.txt 
+
+# All parameters for patient 
+s:Ge/Patient/Parent = "PatientRotation"
+s:Ge/Patient/Type = "TsDicomPatient"
+s:Ge/Patient/Material = "G4_WATER"
+d:Ge/Patient/RotX =  90. deg
+d:Ge/Patient/RotY =  0. deg
+d:Ge/Patient/RotZ =  0. deg
+d:Ge/Patient/TransX = 0.0 mm
+d:Ge/Patient/TransY = 0.0 mm
+d:Ge/Patient/TransZ = 0.0 mm
+s:Ge/Patient/DicomDirectory = "./Patient"
+iv:Ge/Patient/ShowSpecificSlicesX = 1 -1
+
+s:Ge/PatientRotation/Parent = "World"
+s:Ge/PatientRotation/Type   = "Group"
+d:Ge/PatientRotation/RotX =  0. deg
+d:Ge/PatientRotation/RotY =  0. deg
+d:Ge/PatientRotation/RotZ =  0. deg
+d:Ge/PatientRotation/TransX = 0.0 mm
+d:Ge/PatientRotation/TransY = 0.0 mm
+d:Ge/PatientRotation/TransZ = 0.0 mm
+

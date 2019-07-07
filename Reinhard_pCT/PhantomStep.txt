@@ -1,0 +1,253 @@
+#
+d:Ge/HalfLengthZ = 25.4 mm 
+d:Ge/NegHalfLengthZ = -1.0 * Ge/HalfLengthZ mm
+
+d:Ge/Step        = 6.35 mm
+ 
+d:Ge/StepPhantomZPosition = -127.0 mm + Ge/HalfLengthZ 
+
+s:PhantomMaterial = "G4_POLYSTYRENE" #G4_POLYETHYLENE" 
+
+s:Ge/Phantom1/Parent = "World"
+s:Ge/Phantom1/Type   = "Group"
+d:Ge/Phantom1/TransZ = Ge/StepPhantomZPosition mm
+d:Ge/Phantom1/TransX = -114.3 mm
+
+s:Ge/Phantom2/Parent = "World"
+s:Ge/Phantom2/Type   = "Group"
+d:Ge/Phantom2/TransZ = Ge/StepPhantomZPosition mm
+d:Ge/Phantom2/TransX = 0 mm 
+
+s:Ge/Phantom3/Parent = "World"
+s:Ge/Phantom3/Type   = "Group"
+d:Ge/Phantom3/TransZ = Ge/StepPhantomZPosition mm
+d:Ge/Phantom3/TransX = 114.3 mm
+
+#####################################################################
+s:Ge/Phantom1/Step1/Parent   = "Phantom1"
+s:Ge/Phantom1/Step1/Type     = "TsBox"
+s:Ge/Phantom1/Step1/Material = PhantomMaterial
+d:Ge/Phantom1/Step1/HLX      = Ge/Step mm
+d:Ge/Phantom1/Step1/HLY      = 60 mm 
+d:Ge/Phantom1/Step1/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom1/Step1/TransZ  = Ge/NegHalfLengthZ + Ge/Phantom1/Step1/HLZ mm 
+
+s:Ge/Phantom1/Step2/Parent   = "Phantom1"
+s:Ge/Phantom1/Step2/Type     = "TsBox"
+s:Ge/Phantom1/Step2/Material = PhantomMaterial
+d:Ge/Phantom1/Step2/HLX      = 2.0 * Ge/Step mm
+d:Ge/Phantom1/Step2/HLY      = 60 mm 
+d:Ge/Phantom1/Step2/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom1/Step2/TransZ1  = Ge/Phantom1/Step1/TransZ  + Ge/Phantom1/Step1/HLZ mm
+d:Ge/Phantom1/Step2/TransZ   = Ge/Phantom1/Step2/TransZ1 + Ge/Phantom1/Step2/HLZ mm
+
+s:Ge/Phantom1/Step3/Parent   = "Phantom1"
+s:Ge/Phantom1/Step3/Type     = "TsBox"
+s:Ge/Phantom1/Step3/Material = PhantomMaterial
+d:Ge/Phantom1/Step3/HLX      = 3.0 * Ge/Step mm
+d:Ge/Phantom1/Step3/HLY      = 60 mm 
+d:Ge/Phantom1/Step3/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom1/Step3/TransZ1  = Ge/Phantom1/Step2/TransZ  + Ge/Phantom1/Step2/HLZ mm
+d:Ge/Phantom1/Step3/TransZ   = Ge/Phantom1/Step3/TransZ1 + Ge/Phantom1/Step3/HLZ mm
+
+s:Ge/Phantom1/Step4/Parent   = "Phantom1"
+s:Ge/Phantom1/Step4/Type     = "TsBox"
+s:Ge/Phantom1/Step4/Material = PhantomMaterial
+d:Ge/Phantom1/Step4/HLX      = 4.0 * Ge/Step mm
+d:Ge/Phantom1/Step4/HLY      = 60 mm 
+d:Ge/Phantom1/Step4/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom1/Step4/TransZ1  = Ge/Phantom1/Step3/TransZ  + Ge/Phantom1/Step3/HLZ mm
+d:Ge/Phantom1/Step4/TransZ   = Ge/Phantom1/Step4/TransZ1 + Ge/Phantom1/Step4/HLZ mm
+
+s:Ge/Phantom1/Step5/Parent   = "Phantom1"
+s:Ge/Phantom1/Step5/Type     = "TsBox"
+s:Ge/Phantom1/Step5/Material = PhantomMaterial
+d:Ge/Phantom1/Step5/HLX      = 5.0 * Ge/Step mm
+d:Ge/Phantom1/Step5/HLY      = 60 mm 
+d:Ge/Phantom1/Step5/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom1/Step5/TransZ1  = Ge/Phantom1/Step4/TransZ  + Ge/Phantom1/Step4/HLZ mm
+d:Ge/Phantom1/Step5/TransZ   = Ge/Phantom1/Step5/TransZ1 + Ge/Phantom1/Step5/HLZ mm
+
+s:Ge/Phantom1/Step6/Parent   = "Phantom1"
+s:Ge/Phantom1/Step6/Type     = "TsBox"
+s:Ge/Phantom1/Step6/Material = PhantomMaterial
+d:Ge/Phantom1/Step6/HLX      = 6.0 * Ge/Step mm
+d:Ge/Phantom1/Step6/HLY      = 60 mm 
+d:Ge/Phantom1/Step6/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom1/Step6/TransZ1  = Ge/Phantom1/Step5/TransZ  + Ge/Phantom1/Step5/HLZ mm
+d:Ge/Phantom1/Step6/TransZ   = Ge/Phantom1/Step6/TransZ1 + Ge/Phantom1/Step6/HLZ mm
+
+s:Ge/Phantom1/Step7/Parent   = "Phantom1"
+s:Ge/Phantom1/Step7/Type     = "TsBox"
+s:Ge/Phantom1/Step7/Material = PhantomMaterial
+d:Ge/Phantom1/Step7/HLX      = 7.0 * Ge/Step mm
+d:Ge/Phantom1/Step7/HLY      = 60 mm 
+d:Ge/Phantom1/Step7/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom1/Step7/TransZ1  = Ge/Phantom1/Step6/TransZ  + Ge/Phantom1/Step6/HLZ mm
+d:Ge/Phantom1/Step7/TransZ   = Ge/Phantom1/Step7/TransZ1 + Ge/Phantom1/Step7/HLZ mm
+
+s:Ge/Phantom1/Step8/Parent   = "Phantom1"
+s:Ge/Phantom1/Step8/Type     = "TsBox"
+s:Ge/Phantom1/Step8/Material = PhantomMaterial
+d:Ge/Phantom1/Step8/HLX      = 8.0 * Ge/Step mm
+d:Ge/Phantom1/Step8/HLY      = 60 mm 
+d:Ge/Phantom1/Step8/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom1/Step8/TransZ1  = Ge/Phantom1/Step7/TransZ  + Ge/Phantom1/Step7/HLZ mm
+d:Ge/Phantom1/Step8/TransZ   = Ge/Phantom1/Step8/TransZ1 + Ge/Phantom1/Step8/HLZ mm
+
+#####################################################################
+s:Ge/Phantom2/Step1/Parent   = "Phantom2"
+s:Ge/Phantom2/Step1/Type     = "TsBox"
+s:Ge/Phantom2/Step1/Material = PhantomMaterial
+d:Ge/Phantom2/Step1/HLX      = Ge/Step mm
+d:Ge/Phantom2/Step1/HLY      = 60 mm 
+d:Ge/Phantom2/Step1/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom2/Step1/TransZ  = Ge/NegHalfLengthZ + Ge/Phantom2/Step1/HLZ mm 
+
+s:Ge/Phantom2/Step2/Parent   = "Phantom2"
+s:Ge/Phantom2/Step2/Type     = "TsBox"
+s:Ge/Phantom2/Step2/Material = PhantomMaterial
+d:Ge/Phantom2/Step2/HLX      = 2.0 * Ge/Step mm
+d:Ge/Phantom2/Step2/HLY      = 60 mm 
+d:Ge/Phantom2/Step2/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom2/Step2/TransZ1  = Ge/Phantom2/Step1/TransZ  + Ge/Phantom2/Step1/HLZ mm
+d:Ge/Phantom2/Step2/TransZ   = Ge/Phantom2/Step2/TransZ1 + Ge/Phantom2/Step2/HLZ mm
+
+s:Ge/Phantom2/Step3/Parent   = "Phantom2"
+s:Ge/Phantom2/Step3/Type     = "TsBox"
+s:Ge/Phantom2/Step3/Material = PhantomMaterial
+d:Ge/Phantom2/Step3/HLX      = 3.0 * Ge/Step mm
+d:Ge/Phantom2/Step3/HLY      = 60 mm 
+d:Ge/Phantom2/Step3/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom2/Step3/TransZ1  = Ge/Phantom2/Step2/TransZ  + Ge/Phantom2/Step2/HLZ mm
+d:Ge/Phantom2/Step3/TransZ   = Ge/Phantom2/Step3/TransZ1 + Ge/Phantom2/Step3/HLZ mm
+
+s:Ge/Phantom2/Step4/Parent   = "Phantom2"
+s:Ge/Phantom2/Step4/Type     = "TsBox"
+s:Ge/Phantom2/Step4/Material = PhantomMaterial
+d:Ge/Phantom2/Step4/HLX      = 4.0 * Ge/Step mm
+d:Ge/Phantom2/Step4/HLY      = 60 mm 
+d:Ge/Phantom2/Step4/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom2/Step4/TransZ1  = Ge/Phantom2/Step3/TransZ  + Ge/Phantom2/Step3/HLZ mm
+d:Ge/Phantom2/Step4/TransZ   = Ge/Phantom2/Step4/TransZ1 + Ge/Phantom2/Step4/HLZ mm
+
+s:Ge/Phantom2/Step5/Parent   = "Phantom2"
+s:Ge/Phantom2/Step5/Type     = "TsBox"
+s:Ge/Phantom2/Step5/Material = PhantomMaterial
+d:Ge/Phantom2/Step5/HLX      = 5.0 * Ge/Step mm
+d:Ge/Phantom2/Step5/HLY      = 60 mm 
+d:Ge/Phantom2/Step5/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom2/Step5/TransZ1  = Ge/Phantom2/Step4/TransZ  + Ge/Phantom2/Step4/HLZ mm
+d:Ge/Phantom2/Step5/TransZ   = Ge/Phantom2/Step5/TransZ1 + Ge/Phantom2/Step5/HLZ mm
+
+s:Ge/Phantom2/Step6/Parent   = "Phantom2"
+s:Ge/Phantom2/Step6/Type     = "TsBox"
+s:Ge/Phantom2/Step6/Material = PhantomMaterial
+d:Ge/Phantom2/Step6/HLX      = 6.0 * Ge/Step mm
+d:Ge/Phantom2/Step6/HLY      = 60 mm 
+d:Ge/Phantom2/Step6/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom2/Step6/TransZ1  = Ge/Phantom2/Step5/TransZ  + Ge/Phantom2/Step5/HLZ mm
+d:Ge/Phantom2/Step6/TransZ   = Ge/Phantom2/Step6/TransZ1 + Ge/Phantom2/Step6/HLZ mm
+
+s:Ge/Phantom2/Step7/Parent   = "Phantom2"
+s:Ge/Phantom2/Step7/Type     = "TsBox"
+s:Ge/Phantom2/Step7/Material = PhantomMaterial
+d:Ge/Phantom2/Step7/HLX      = 7.0 * Ge/Step mm
+d:Ge/Phantom2/Step7/HLY      = 60 mm 
+d:Ge/Phantom2/Step7/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom2/Step7/TransZ1  = Ge/Phantom2/Step6/TransZ  + Ge/Phantom2/Step6/HLZ mm
+d:Ge/Phantom2/Step7/TransZ   = Ge/Phantom2/Step7/TransZ1 + Ge/Phantom2/Step7/HLZ mm
+
+s:Ge/Phantom2/Step8/Parent   = "Phantom2"
+s:Ge/Phantom2/Step8/Type     = "TsBox"
+s:Ge/Phantom2/Step8/Material = PhantomMaterial
+d:Ge/Phantom2/Step8/HLX      = 8.0 * Ge/Step mm
+d:Ge/Phantom2/Step8/HLY      = 60 mm 
+d:Ge/Phantom2/Step8/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom2/Step8/TransZ1  = Ge/Phantom2/Step7/TransZ  + Ge/Phantom2/Step7/HLZ mm
+d:Ge/Phantom2/Step8/TransZ   = Ge/Phantom2/Step8/TransZ1 + Ge/Phantom2/Step8/HLZ mm
+#
+s:Ge/Phantom3/Step1/Parent   = "Phantom3"
+s:Ge/Phantom3/Step1/Type     = "TsBox"
+s:Ge/Phantom3/Step1/Material = PhantomMaterial
+d:Ge/Phantom3/Step1/HLX      = Ge/Step mm
+d:Ge/Phantom3/Step1/HLY      = 60 mm 
+d:Ge/Phantom3/Step1/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom3/Step1/TransZ  = Ge/NegHalfLengthZ + Ge/Phantom3/Step1/HLZ mm 
+
+s:Ge/Phantom3/Step2/Parent   = "Phantom3"
+s:Ge/Phantom3/Step2/Type     = "TsBox"
+s:Ge/Phantom3/Step2/Material = PhantomMaterial
+d:Ge/Phantom3/Step2/HLX      = 2.0 * Ge/Step mm
+d:Ge/Phantom3/Step2/HLY      = 60 mm 
+d:Ge/Phantom3/Step2/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom3/Step2/TransZ1  = Ge/Phantom3/Step1/TransZ  + Ge/Phantom3/Step1/HLZ mm
+d:Ge/Phantom3/Step2/TransZ   = Ge/Phantom3/Step2/TransZ1 + Ge/Phantom3/Step2/HLZ mm
+
+s:Ge/Phantom3/Step3/Parent   = "Phantom3"
+s:Ge/Phantom3/Step3/Type     = "TsBox"
+s:Ge/Phantom3/Step3/Material = PhantomMaterial
+d:Ge/Phantom3/Step3/HLX      = 3.0 * Ge/Step mm
+d:Ge/Phantom3/Step3/HLY      = 60 mm 
+d:Ge/Phantom3/Step3/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom3/Step3/TransZ1  = Ge/Phantom3/Step2/TransZ  + Ge/Phantom3/Step2/HLZ mm
+d:Ge/Phantom3/Step3/TransZ   = Ge/Phantom3/Step3/TransZ1 + Ge/Phantom3/Step3/HLZ mm
+
+s:Ge/Phantom3/Step4/Parent   = "Phantom3"
+s:Ge/Phantom3/Step4/Type     = "TsBox"
+s:Ge/Phantom3/Step4/Material = PhantomMaterial
+d:Ge/Phantom3/Step4/HLX      = 4.0 * Ge/Step mm
+d:Ge/Phantom3/Step4/HLY      = 60 mm 
+d:Ge/Phantom3/Step4/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom3/Step4/TransZ1  = Ge/Phantom3/Step3/TransZ  + Ge/Phantom3/Step3/HLZ mm
+d:Ge/Phantom3/Step4/TransZ   = Ge/Phantom3/Step4/TransZ1 + Ge/Phantom3/Step4/HLZ mm
+
+s:Ge/Phantom3/Step5/Parent   = "Phantom3"
+s:Ge/Phantom3/Step5/Type     = "TsBox"
+s:Ge/Phantom3/Step5/Material = PhantomMaterial
+d:Ge/Phantom3/Step5/HLX      = 5.0 * Ge/Step mm
+d:Ge/Phantom3/Step5/HLY      = 60 mm 
+d:Ge/Phantom3/Step5/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom3/Step5/TransZ1  = Ge/Phantom3/Step4/TransZ  + Ge/Phantom3/Step4/HLZ mm
+d:Ge/Phantom3/Step5/TransZ   = Ge/Phantom3/Step5/TransZ1 + Ge/Phantom3/Step5/HLZ mm
+
+s:Ge/Phantom3/Step6/Parent   = "Phantom3"
+s:Ge/Phantom3/Step6/Type     = "TsBox"
+s:Ge/Phantom3/Step6/Material = PhantomMaterial
+d:Ge/Phantom3/Step6/HLX      = 6.0 * Ge/Step mm
+d:Ge/Phantom3/Step6/HLY      = 60 mm 
+d:Ge/Phantom3/Step6/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom3/Step6/TransZ1  = Ge/Phantom3/Step5/TransZ  + Ge/Phantom3/Step5/HLZ mm
+d:Ge/Phantom3/Step6/TransZ   = Ge/Phantom3/Step6/TransZ1 + Ge/Phantom3/Step6/HLZ mm
+
+s:Ge/Phantom3/Step7/Parent   = "Phantom3"
+s:Ge/Phantom3/Step7/Type     = "TsBox"
+s:Ge/Phantom3/Step7/Material = PhantomMaterial
+d:Ge/Phantom3/Step7/HLX      = 7.0 * Ge/Step mm
+d:Ge/Phantom3/Step7/HLY      = 60 mm 
+d:Ge/Phantom3/Step7/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom3/Step7/TransZ1  = Ge/Phantom3/Step6/TransZ  + Ge/Phantom3/Step6/HLZ mm
+d:Ge/Phantom3/Step7/TransZ   = Ge/Phantom3/Step7/TransZ1 + Ge/Phantom3/Step7/HLZ mm
+
+s:Ge/Phantom3/Step8/Parent   = "Phantom3"
+s:Ge/Phantom3/Step8/Type     = "TsBox"
+s:Ge/Phantom3/Step8/Material = PhantomMaterial
+d:Ge/Phantom3/Step8/HLX      = 8.0 * Ge/Step mm
+d:Ge/Phantom3/Step8/HLY      = 60 mm 
+d:Ge/Phantom3/Step8/HLZ      = 0.5 * Ge/Step mm
+d:Ge/Phantom3/Step8/TransZ1  = Ge/Phantom3/Step7/TransZ  + Ge/Phantom3/Step7/HLZ mm
+d:Ge/Phantom3/Step8/TransZ   = Ge/Phantom3/Step8/TransZ1 + Ge/Phantom3/Step8/HLZ mm
+#
+s:Ge/Degrader/Type = "TsBox"
+s:Ge/Degrader/Material = PhantomMaterial
+s:Ge/Degrader/Parent = "World"
+d:Ge/Degrader/HLX  = 200 mm 
+d:Ge/Degrader/HLY  = 60 mm 
+d:Ge/Degrader/HLZ  = 2 mm 
+d:Ge/Degrader/TransX = 0 mm
+d:Ge/Degrader/TransY = 0 mm 
+d:Ge/Degrader/TransZ1 = Ge/StepPhantomZPosition + Ge/HalfLengthZ mm 
+d:Ge/Degrader/TransZ = Ge/Degrader/TransZ1 + Ge/Degrader/HLZ mm 
+s:Ge/Degrader/Color = "red"
+s:Ge/Degrader/DrawingStyle = "Solid"
+

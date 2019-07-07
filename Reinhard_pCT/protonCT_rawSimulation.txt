@@ -1,0 +1,99 @@
+# pCT geometry is spread into the following files.
+includeFile = PhantomStep.txt Scorers.txt Table.txt
+
+# World volume is created by default for Topas as a box.
+# Here we reset the dimensions to 2 m side
+s:Ge/World/Material = "Air"
+d:Ge/World/HLX = 1 m
+d:Ge/World/HLY = 1 m
+d:Ge/World/HLZ = 1 m
+
+# The physics list is defined here. Comment the following line
+# to use the default physics list (suggested for proton therapy applications)
+sv:Ph/Default/Modules = 1 "g4em-standard_opt4"
+
+# If visualization is needed uncomment the next two lines
+includeFile = view.txt
+b:Ts/PauseBeforeQuit = "true" 
+
+# Set the number of CPUs used for the simulation. If 0, then all the 
+# available CPUs will be used.
+i:Ts/NumberOfThreads = 0
+b:Ts/ShowCPUTime = "True"
+
+# If multiple jobs are submitted, it is a good idea to change the
+# random seed
+i:Ts/Seed = 1 
+
+# The following is for safety check. As the simulation is already tested
+# then there is not need to check for overlaps
+b:Ge/CheckForUnusedComponents = "False"
+b:Ge/CheckForOverlaps = "False"
+i:Ts/MaxInterruptedHistories = 100000
+
+# This parameter is not from topas, but from us. It allows to change
+# the separation distance  between the trackers (those closer to the 
+# patient). Automatically, all the other planes are set based on this 
+# parameter
+d:Ge/IncreaseDistanceBetweenCentralPlanesBy = 0 cm
+
+# Creates a new material for the step phantom
+s:PhantomMaterial = "polystyrene"
+sv:Ma/polystyrene/Components = 2 "Carbon" "Hydrogen"
+uv:Ma/polystyrene/Fractions  = 2 0.922 0.078
+d:Ma/polystyrene/Density = 1.045 g/cm3
+
+# The next parameters were created to set the thickness of 
+# the degrader located at upstream of the step phantom. It was
+# defined as a function of the number of bricks Ge/Nb
+u:Ge/Nb = 1
+d:Ge/Length = 50.8 mm * Ge/Nb
+Ge/Degrader/HLZ = 0.5 * Ge/Length mm
+
+# To run this simulation for no calibration setup, then
+# uncomment the next lines 
+#b:Ge/TablePhantom/Include    = "False"
+#b:Ge/Degrader/Include = "False"
+#b:Ge/Phantom1/Include = "False"
+#b:Ge/Phantom2/Include = "False"
+#b:Ge/Phantom3/Include = "False"
+
+# The source of protons. It creates a rectangular and 
+# zero-divergence field of 20 x 10 cm2, positioned at upstream
+# the first tracker. 100 histories are shoot.
+includeFile = Source.txt
+i:Ts/ShowHistoryCountAtInterval = 10
+
+# Set the position of the field with respect to the 
+# world volume
+d:Ge/BeamPosition/RotX = 0 deg
+d:Ge/BeamPosition/TransZ = -50 cm
+
+# Set the name of the output files. The scorers are defined
+# in Scorers.txt. Any parameter in the txt files can be
+# modified in the main file (protonCT.txt)
+# Phase Spaces
+s:Sc/Plane1tin/OutputFile = "Tracker1t_In_StepPhantom"
+s:Sc/Plane1tout/OutputFile = "Tracker1t_Out_StepPhantom"
+s:Sc/Plane1vin/OutputFile = "Tracker1v_In_StepPhantom"
+s:Sc/Plane1vout/OutputFile = "Tracker1v_Out_StepPhantom"
+s:Sc/Plane2tin/OutputFile = "Tracker2t_In_StepPhantom"
+s:Sc/Plane2tout/OutputFile = "Tracker2t_Out_StepPhantom"
+s:Sc/Plane2vin/OutputFile = "Tracker2v_In_StepPhantom"
+s:Sc/Plane2vout/OutputFile = "Tracker2v_Out_StepPhantom"
+s:Sc/Plane3tin/OutputFile = "Tracker3t_In_StepPhantom"
+s:Sc/Plane3tout/OutputFile = "Tracker3t_Out_StepPhantom"
+s:Sc/Plane3vin/OutputFile = "Tracker3v_In_StepPhantom"
+s:Sc/Plane3vout/OutputFile = "Tracker3v_Out_StepPhantom"
+s:Sc/Plane4tin/OutputFile = "Tracker4t_In_StepPhantom"
+s:Sc/Plane4tout/OutputFile = "Tracker4t_Out_StepPhantom"
+s:Sc/Plane4vin/OutputFile = "Tracker4v_In_StepPhantom"
+s:Sc/Plane4vout/OutputFile = "Tracker4v_Out_StepPhantom"
+
+# Energy deposit per event 
+s:Sc/Edep1/OutputFile = "EdepScintillator1_StepPhantom"
+s:Sc/Edep2/OutputFile = "EdepScintillator2_StepPhantom"
+s:Sc/Edep3/OutputFile = "EdepScintillator3_StepPhantom"
+s:Sc/Edep4/OutputFile = "EdepScintillator4_StepPhantom"
+s:Sc/Edep5/OutputFile = "EdepScintillator5_StepPhantom"
+

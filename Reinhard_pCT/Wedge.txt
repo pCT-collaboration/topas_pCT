@@ -1,0 +1,11 @@
+s:Ge/Wedge/Parent = "World"
+s:Ge/Wedge/Material = "G4_WATER"
+s:Ge/Wedge/Type   = "G4Trd"
+d:Ge/Wedge/HLX1   =  6 cm
+d:Ge/Wedge/HLX2   =  6 cm 
+d:Ge/Wedge/HLY1   = 10.5 cm 
+d:Ge/Wedge/HLY2   =  0.5 cm 
+d:Ge/Wedge/HLZ    = 2.5 cm 
+d:Ge/Wedge/RotZ   = 90 deg
+d:Ge/Wedge/RotY   = 180 deg
+
