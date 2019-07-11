@@ -1,0 +1,4 @@
+# The physics list is defined here. Comment the following line
+# to use the default physics list (suggested for proton therapy applications)
+sv:Ph/Default/Modules = 1 "g4em-standard_opt4"
+

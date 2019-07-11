@@ -1,0 +1,11 @@
+s:Ge/Phantom/Parent    = "World"
+s:Ge/Phantom/Type      = "TsCylinder"
+s:Ge/Phantom/Material  = "G4_WATER"
+d:Ge/Phantom/HL        = 10 cm
+d:Ge/Phantom/RMax      = 10 cm
+#i:Ge/Phahtom/RBins     = 1
+#i:Ge/Phantom/ThetaBins = 1
+#i:Ge/Phantom/ZBins     = 100
+s:Ge/Phantom/Color     = "grass"
+d:Ge/Phantom/RotX      = 90 deg
+

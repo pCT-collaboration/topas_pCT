@@ -1,0 +1,31 @@
+# World volume is created by default for Topas as a box.
+# Here we reset the dimensions to 2 m side
+s:Ge/World/Material = "Air"
+d:Ge/World/HLX = 1 m
+d:Ge/World/HLY = 1 m
+d:Ge/World/HLZ = 1 m
+
+# Set the number of CPUs used for the simulation. If 0, then all the 
+# available CPUs will be used.
+i:Ts/NumberOfThreads = 0
+b:Ts/ShowCPUTime = "True"
+
+# If multiple jobs are submitted, it is a good idea to change the
+# random seed
+i:Ts/Seed = 1 
+
+# The following is for safety check. As the simulation is already tested
+# then there is not need to check for overlaps
+#b:Ge/CheckForUnusedComponents = "False"
+#b:Ge/CheckForOverlaps = "False"
+#i:Ts/MaxInterruptedHistories = 100000
+
+i:Ts/ShowHistoryCountAtInterval = 10
+
+includeFile = Source.topas 
+includeFile = Lab.topas
+includeFile = Scorers.topas
+includeFile = View.topas
+#includeFile = TablePhantom.topas
+includeFile = WaterPhantom.topas
+
