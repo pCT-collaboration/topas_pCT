@@ -19,7 +19,11 @@ d:So/Beam/HHeight = 10 cm
 i:So/NProtons = 10
 d:Ge/Detector/Width = 349.0 mm
 d:Ge/Detector/Height = 86.2 mm
-s:Sc/Output/Directory = "/home/Reconstructions/topas/WaterPhantom/"
+d:Ge/Phantom/Angle = 4 deg
+i:Ge/Phantom/IntegerAngle = 4
+s:Sc/Output/BaseDirectory = "/home/Reconstructions/topas/WaterPhantom/"
+s:Sc/Output/Directory0 = Sc/Output/BaseDirectory + Ge/Phantom/IntegerAngle
+s:Sc/Output/Directory = Sc/Output/Directory0 + "/"
 
 # The following is for safety check. As the simulation is already tested
 # then there is not need to check for overlaps
