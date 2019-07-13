@@ -4,9 +4,12 @@ d:So/protonField/BeamEnergy = 207.284923318 MeV
 u:So/protonField/BeamEnergySpread = 0.388386493389
 s:So/protonField/BeamPositionDistribution = "Flat"
 s:So/protonField/BeamPositionCutoffShape = "Rectangle"
-d:So/protonField/BeamPositionCutOffX    = 20 cm
-d:So/protonField/BeamPositionCutOffY    = 10  cm
+d:So/Beam/HWidth = 20 cm
+d:So/Beam/HHeight = 10 cm
+d:So/protonField/BeamPositionCutOffX    = So/Beam/HWidth cm
+d:So/protonField/BeamPositionCutOffY    = So/Beam/HHeight  cm
 s:So/protonField/BeamAngularDistribution = "None"
 s:So/protonField/Component = "BeamPosition"
-i:So/protonField/NumberOfHistoriesInRun = 10
+i:So/NProtons = 10
+i:So/protonField/NumberOfHistoriesInRun = So/NProtons
 

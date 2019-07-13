@@ -32,8 +32,10 @@ s:Ge/box4v/Color    = "grass"
 s:Ge/box/Parent = "World"
 s:Ge/box/Type   = "Group"
 
-d:Ge/Detector_Size_T = 349.0 mm
-d:Ge/Detector_Size_V = 86.2 mm
+d:Ge/Detector/Width = 349.0 mm
+d:Ge/Detector/Height = 86.2 mm
+d:Ge/Detector_Size_T = Ge/Detector/Width mm
+d:Ge/Detector_Size_V = Ge/Detector/Height mm
 d:Ge/Detector_Thickness = 400 um
 
 s:Ge/box1t/Parent = Ge/box/Parent
