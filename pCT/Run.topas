@@ -4,6 +4,8 @@ s:Ge/World/Material = "Air"
 d:Ge/World/HLX = 1 m
 d:Ge/World/HLY = 1 m
 d:Ge/World/HLZ = 1 m
+d:Ge/BeamPosition/RotX = 0 deg
+d:Ge/BeamPosition/TransZ = -50 cm
 
 # Set the number of CPUs used for the simulation. If 0, then all the 
 # available CPUs will be used.
