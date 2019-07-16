@@ -195,14 +195,8 @@ beam_energy = 200. #// MeV;
 current_time = time.clock();
 projection_angle= float(angle);
 phantom_name_size = len(phantom);
-print "phantom_name_size"
-print phantom_name_size
 data_source_size = len(iFileName);
-print "data_source_size"
-print data_source_size
 prepared_by_size = len(preparer);
-print "prepared_by_size"
-print prepared_by_size
 #// Write headers:
 ofile = open(oFileName,'wb')
 
