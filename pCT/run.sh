@@ -120,8 +120,7 @@ echo "Job working directory: ${PWD}"
 cd ${PWD}
 pwd
 
-TOPAS_HOME=$HOME/topas
-alias topas=$TOPAS_HOME/topas
+alias topas=$HOME/topas/topas
 
 mkdir -p $DIR/$PHANTOM/$ANGLE
 topas $TOPAS
