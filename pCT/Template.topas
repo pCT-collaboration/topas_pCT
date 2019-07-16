@@ -9,7 +9,7 @@ d:Ge/BeamPosition/TransZ = -50 cm
 
 # Set the number of CPUs used for the simulation. If 0, then all the 
 # available CPUs will be used.
-i:Ts/NumberOfThreads = 0
+i:Ts/NumberOfThreads = 10
 b:Ts/ShowCPUTime = "True"
 
 # If multiple jobs are submitted, it is a good idea to change the
