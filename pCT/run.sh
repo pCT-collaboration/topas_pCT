@@ -107,6 +107,7 @@ do
         < Template.topas > $TOPAS
     if [[ $NPROTON < 10000 ]]
     then
+        mkdir -p $DIR/$ANGLE
         topas $TOPAS
         python InputEdiffBin.py --dir=$DIR --angle=$ANGLE --phantom=$PHANTOM --preparer="$PREPARER" --histories=$NPROTON
     else
@@ -119,6 +120,7 @@ echo "Job working directory: ${PWD}"
 cd ${PWD}
 pwd
 
+mkdir -p $DIR/$ANGLE
 topas $TOPAS
 python InputEdiffBin.py --dir=$DIR --angle=$ANGLE --phantom=$PHANTOM --preparer="$PREPARER" --histories=$NPROTON
 END
