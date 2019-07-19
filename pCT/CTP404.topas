@@ -1,0 +1,258 @@
+includeFile = Materials.topas
+
+u:Ge/Global/cos30 = 0.866
+u:Ge/Global/cos36 = 0.80902
+u:Ge/Global/cos72 = 0.30902
+u:Ge/Global/sin30 = 0.5
+u:Ge/Global/sin36 = 0.58779
+u:Ge/Global/sin72 = 0.95106
+
+s:Ge/Phantom/Parent    = "World"
+s:Ge/Phantom/Type      = "TsCylinder"
+s:Ge/Phantom/Material  = "epoxy"
+d:Ge/Phantom/diameter  = 150 mm
+d:Ge/Phantom/height    = 25 mm
+d:Ge/Phantom/HL        = 0.5 * Ge/Phantom/height cm
+d:Ge/Phantom/RMax      = 0.5 * Ge/Phantom/diameter cm
+s:Ge/Phantom/Color     = "grass"
+d:Ge/Phantom/RotX      = -90 deg
+
+d:Ge/insert/diameter = 12.2 mm
+d:Ge/insert/RMax = 0.5 * Ge/insert/diameter mm
+d:Ge/insert/height = 25 mm
+d:Ge/insert/HL = 0.5 * Ge/insert/height mm
+d:Ge/insert/radius = 58.5 mm
+d:Ge/insert/neg_radius = -1.0 * Ge/insert/radius mm
+
+s:Ge/insert_air/Parent = "Phantom"
+s:Ge/insert_air/Material = "air"
+s:Ge/insert_air/Type = "TsCylinder"
+d:Ge/insert_air/HL = Ge/insert/HL mm
+d:Ge/insert_air/RMax = Ge/insert/RMax mm
+d:Ge/insert_air/TransX = Ge/insert/radius mm
+d:Ge/insert_air/TransY = 0 mm
+d:Ge/insert_air/TransZ = 0 mm
+s:Ge/insert_air/DrawingStyle = "Solid"
+
+s:Ge/insert_polyst/Parent = "Phantom"
+s:Ge/insert_polyst/Material = "G4_POLYSTYRENE"
+s:Ge/insert_polyst/Type = "TsCylinder"
+d:Ge/insert_polyst/HL = Ge/insert/HL mm
+d:Ge/insert_polyst/RMax = Ge/insert/RMax mm
+d:Ge/insert_polyst/TransX = Ge/insert/radius mm * Ge/Global/cos30
+d:Ge/insert_polyst/TransY = Ge/insert/radius mm * Ge/Global/sin30
+d:Ge/insert_polyst/TransZ = 0 mm
+s:Ge/insert_polyst/DrawingStyle = "Solid"
+
+s:Ge/insert_LDPE/Parent = "Phantom"
+s:Ge/insert_LDPE/Material = "G4_POLYETHYLENE"
+s:Ge/insert_LDPE/Type = "TsCylinder"
+d:Ge/insert_LDPE/HL = Ge/insert/HL mm
+d:Ge/insert_LDPE/RMax = Ge/insert/RMax mm
+d:Ge/insert_LDPE/TransX = 0 mm
+d:Ge/insert_LDPE/TransY = Ge/insert/radius mm
+d:Ge/insert_LDPE/TransZ = 0 mm
+s:Ge/insert_LDPE/DrawingStyle = "Solid"
+
+s:Ge/insert_PMP/Parent = "Phantom"
+s:Ge/insert_PMP/Material = "PMP"
+s:Ge/insert_PMP/Type = "TsCylinder"
+d:Ge/insert_PMP/HL = Ge/insert/HL mm
+d:Ge/insert_PMP/RMax = Ge/insert/RMax mm
+d:Ge/insert_PMP/TransX = Ge/insert/neg_radius mm * Ge/Global/cos30
+d:Ge/insert_PMP/TransY = Ge/insert/radius mm * Ge/Global/sin30
+d:Ge/insert_PMP/TransZ = 0 mm
+s:Ge/insert_PMP/DrawingStyle = "Solid"
+
+s:Ge/insert_air2/Parent = "Phantom"
+s:Ge/insert_air2/Material = "air"
+s:Ge/insert_air2/Type = "TsCylinder"
+d:Ge/insert_air2/HL = Ge/insert/HL mm
+d:Ge/insert_air2/RMax = Ge/insert/RMax mm
+d:Ge/insert_air2/TransX = Ge/insert/neg_radius mm
+d:Ge/insert_air2/TransY = 0 mm
+d:Ge/insert_air2/TransZ = 0 mm
+s:Ge/insert_air2/DrawingStyle = "Solid"
+
+s:Ge/insert_teflon/Parent = "Phantom"
+s:Ge/insert_teflon/Material = "G4_TEFLON"
+s:Ge/insert_teflon/Type = "TsCylinder"
+d:Ge/insert_teflon/HL = Ge/insert/HL mm
+d:Ge/insert_teflon/RMax = Ge/insert/RMax mm
+d:Ge/insert_teflon/TransX = Ge/insert/neg_radius mm * Ge/Global/cos30
+d:Ge/insert_teflon/TransY = Ge/insert/neg_radius mm * Ge/Global/sin30
+d:Ge/insert_teflon/TransZ = 0 mm
+s:Ge/insert_teflon/DrawingStyle = "Solid"
+
+s:Ge/insert_delrin/Parent = "Phantom"
+s:Ge/insert_delrin/Material = "delrin"
+s:Ge/insert_delrin/Type = "TsCylinder"
+d:Ge/insert_delrin/HL = Ge/insert/HL mm
+d:Ge/insert_delrin/RMax = Ge/insert/RMax mm
+d:Ge/insert_delrin/TransX = 0 mm
+d:Ge/insert_delrin/TransY = Ge/insert/neg_radius mm
+d:Ge/insert_delrin/TransZ = 0 mm
+s:Ge/insert_delrin/DrawingStyle = "Solid"
+
+s:Ge/insert_PMMA/Parent = "Phantom"
+s:Ge/insert_PMMA/Material = "air"
+s:Ge/insert_PMMA/Type = "TsCylinder"
+d:Ge/insert_PMMA/HL = Ge/insert/HL mm
+d:Ge/insert_PMMA/RMax = Ge/insert/RMax mm
+d:Ge/insert_PMMA/TransX = Ge/insert/radius mm * Ge/Global/cos30
+d:Ge/insert_PMMA/TransY = Ge/insert/neg_radius mm * Ge/Global/sin30
+d:Ge/insert_PMMA/TransZ = 0 mm
+s:Ge/insert_PMMA/DrawingStyle = "Solid"
+
+d:Ge/insert/rod_diameter = 3.0 mm
+d:Ge/insert/rod_radius = 0.5 * Ge/insert/rod_diameter mm
+d:Ge/insert/rod_distance = 50.0 mm
+d:Ge/insert/rod_Hdistance = 0.5 * Ge/insert/rod_distance mm
+
+s:Ge/insert_rod1/Parent = "Phantom"
+s:Ge/insert_rod1/Material = "air"
+s:Ge/insert_rod1/Type = "TsCylinder"
+d:Ge/insert_rod1/HL = Ge/insert/HL mm
+d:Ge/insert_rod1/RMax = Ge/insert/rod_radius mm
+d:Ge/insert_rod1/TransX = Ge/insert/rod_Hdistance mm
+d:Ge/insert_rod1/TransY = Ge/insert/rod_Hdistance mm
+d:Ge/insert_rod1/TransZ = 0 mm
+s:Ge/insert_rod1/DrawingStyle = "Solid"
+
+s:Ge/insert_rod2/Parent = "Phantom"
+s:Ge/insert_rod2/Material = "air"
+s:Ge/insert_rod2/Type = "TsCylinder"
+d:Ge/insert_rod2/HL = Ge/insert/HL mm
+d:Ge/insert_rod2/RMax = Ge/insert/rod_radius mm
+d:Ge/insert_rod2/TransX = -1.0 * Ge/insert/rod_Hdistance mm
+d:Ge/insert_rod2/TransY = Ge/insert/rod_Hdistance mm
+d:Ge/insert_rod2/TransZ = 0 mm
+s:Ge/insert_rod2/DrawingStyle = "Solid"
+
+s:Ge/insert_rod3/Parent = "Phantom"
+s:Ge/insert_rod3/Material = "air"
+s:Ge/insert_rod3/Type = "TsCylinder"
+d:Ge/insert_rod3/HL = Ge/insert/HL mm
+d:Ge/insert_rod3/RMax = Ge/insert/rod_radius mm
+d:Ge/insert_rod3/TransX = Ge/insert/rod_Hdistance mm
+d:Ge/insert_rod3/TransY = -1.0 * Ge/insert/rod_Hdistance mm
+d:Ge/insert_rod3/TransZ = 0 mm
+s:Ge/insert_rod3/DrawingStyle = "Solid"
+
+s:Ge/insert_rod4/Parent = "Phantom"
+s:Ge/insert_rod4/Material = "G4_TEFLON"
+s:Ge/insert_rod4/Type = "TsCylinder"
+d:Ge/insert_rod4/HL = Ge/insert/HL mm
+d:Ge/insert_rod4/RMax = Ge/insert/rod_radius mm
+d:Ge/insert_rod4/TransX = -1.0 * Ge/insert/rod_Hdistance mm
+d:Ge/insert_rod4/TransY = -1.0 * Ge/insert/rod_Hdistance mm
+d:Ge/insert_rod4/TransZ = 0 mm
+s:Ge/insert_rod4/DrawingStyle = "Solid"
+
+d:Ge/insert/sphere1_diameter = 10 mm
+d:Ge/insert/sphere1_radius = 0.5 * Ge/insert/sphere1_diameter mm
+d:Ge/insert/sphere2_diameter = 8 mm
+d:Ge/insert/sphere2_radius = 0.5 * Ge/insert/sphere2_diameter mm
+d:Ge/insert/sphere3_diameter = 6 mm
+d:Ge/insert/sphere3_radius = 0.5 * Ge/insert/sphere3_diameter mm
+d:Ge/insert/sphere4_diameter = 4 mm
+d:Ge/insert/sphere4_radius = 0.5 * Ge/insert/sphere4_diameter mm
+d:Ge/insert/sphere5_diameter = 2 mm
+d:Ge/insert/sphere5_radius = 0.5 * Ge/insert/sphere5_diameter mm
+d:Ge/insert/sphere_distance = 15 mm
+d:Ge/insert/neg_sphere_distance = -1.0 * Ge/insert/sphere_distance mm
+
+s:Ge/insert_sphere1/Parent = "Phantom"
+s:Ge/insert_sphere1/Material = "PMMA"
+s:Ge/insert_sphere1/Type = "TsSphere"
+d:Ge/insert_sphere1/RMax = Ge/insert/sphere1_radius mm
+d:Ge/insert_sphere1/TransX = Ge/insert/neg_sphere_distance mm
+d:Ge/insert_sphere1/TransY = 0 mm
+d:Ge/insert_sphere1/TransZ = 0 mm
+s:Ge/insert_sphere1/DrawingStyle = "Solid"
+
+s:Ge/insert_sphere2/Parent = "Phantom"
+s:Ge/insert_sphere2/Material = "PMMA"
+s:Ge/insert_sphere2/Type = "TsSphere"
+d:Ge/insert_sphere2/RMax = Ge/insert/sphere2_radius mm
+d:Ge/insert_sphere2/TransX = Ge/insert/neg_sphere_distance mm * Ge/Global/cos72
+d:Ge/insert_sphere2/TransY = Ge/insert/sphere_distance mm * Ge/Global/sin72
+d:Ge/insert_sphere2/TransZ = 0 mm
+s:Ge/insert_sphere2/DrawingStyle = "Solid"
+
+s:Ge/insert_sphere3/Parent = "Phantom"
+s:Ge/insert_sphere3/Material = "PMMA"
+s:Ge/insert_sphere3/Type = "TsSphere"
+d:Ge/insert_sphere3/RMax = Ge/insert/sphere3_radius mm
+d:Ge/insert_sphere3/TransX = Ge/insert/sphere_distance mm * Ge/Global/cos36
+d:Ge/insert_sphere3/TransY = Ge/insert/sphere_distance mm * Ge/Global/sin36
+d:Ge/insert_sphere3/TransZ = 0 mm
+s:Ge/insert_sphere3/DrawingStyle = "Solid"
+
+s:Ge/insert_sphere4/Parent = "Phantom"
+s:Ge/insert_sphere4/Material = "PMMA"
+s:Ge/insert_sphere4/Type = "TsSphere"
+d:Ge/insert_sphere4/RMax = Ge/insert/sphere4_radius mm
+d:Ge/insert_sphere4/TransX = Ge/insert/sphere_distance mm * Ge/Global/cos36
+d:Ge/insert_sphere4/TransY = Ge/insert/neg_sphere_distance mm * Ge/Global/sin36
+d:Ge/insert_sphere4/TransZ = 0 mm
+s:Ge/insert_sphere4/DrawingStyle = "Solid"
+
+s:Ge/insert_sphere5/Parent = "Phantom"
+s:Ge/insert_sphere5/Material = "PMMA"
+s:Ge/insert_sphere5/Type = "TsSphere"
+d:Ge/insert_sphere5/RMax = Ge/insert/sphere5_radius mm
+d:Ge/insert_sphere5/TransX = Ge/insert/neg_sphere_distance mm * Ge/Global/cos72
+d:Ge/insert_sphere5/TransY = Ge/insert/neg_sphere_distance mm * Ge/Global/sin72
+d:Ge/insert_sphere5/TransZ = 0 mm
+s:Ge/insert_sphere5/DrawingStyle = "Solid"
+
+d:Ge/insert/wire_diameter = 0.2 mm
+d:Ge/insert/wire_radius = 0.5 * Ge/insert/wire_diameter mm
+d:Ge/insert/wire_length = 57.5 mm
+d:Ge/insert/wire_HL = 0.5 * Ge/insert/wire_length mm
+d:Ge/insert/wire_distance = 0.25 * Ge/Phantom/diameter mm
+
+s:Ge/insert_wire1/Parent = "Phantom"
+s:Ge/insert_wire1/Material = "WC"
+s:Ge/insert_wire1/Type = "TsCylinder"
+d:Ge/insert_wire1/HL = Ge/insert/HL mm
+d:Ge/insert_wire1/RMax = Ge/insert/wire_radius mm
+d:Ge/insert_wire1/TransX = Ge/insert/wire_distance mm
+d:Ge/insert_wire1/TransY = 0 mm
+d:Ge/insert_wire1/TransZ = 0 mm
+d:Ge/insert_wire1/RotX = 67 deg
+s:Ge/insert_wire1/DrawingStyle = "Solid"
+
+s:Ge/insert_wire2/Parent = "Phantom"
+s:Ge/insert_wire2/Material = "WC"
+s:Ge/insert_wire2/Type = "TsCylinder"
+d:Ge/insert_wire2/HL = Ge/insert/HL mm
+d:Ge/insert_wire2/RMax = Ge/insert/wire_radius mm
+d:Ge/insert_wire2/TransX = -1.0 * Ge/insert/wire_distance mm
+d:Ge/insert_wire2/TransY = 0 mm
+d:Ge/insert_wire2/TransZ = 0 mm
+d:Ge/insert_wire2/RotX = -67 deg
+s:Ge/insert_wire2/DrawingStyle = "Solid"
+
+s:Ge/insert_wire3/Parent = "Phantom"
+s:Ge/insert_wire3/Material = "WC"
+s:Ge/insert_wire3/Type = "TsCylinder"
+d:Ge/insert_wire3/HL = Ge/insert/HL mm
+d:Ge/insert_wire3/RMax = Ge/insert/wire_radius mm
+d:Ge/insert_wire3/TransX = 0 mm
+d:Ge/insert_wire3/TransY = Ge/insert/wire_distance mm
+d:Ge/insert_wire3/TransZ = 0 mm
+d:Ge/insert_wire3/RotY = 67 deg
+s:Ge/insert_wire3/DrawingStyle = "Solid"
+
+s:Ge/insert_wire4/Parent = "Phantom"
+s:Ge/insert_wire4/Material = "WC"
+s:Ge/insert_wire4/Type = "TsCylinder"
+d:Ge/insert_wire4/HL = Ge/insert/HL mm
+d:Ge/insert_wire4/RMax = Ge/insert/wire_radius mm
+d:Ge/insert_wire4/TransX = 0 mm
+d:Ge/insert_wire4/TransY = -1.0 * Ge/insert/wire_distance mm
+d:Ge/insert_wire4/TransZ = 0 mm
+d:Ge/insert_wire4/RotY = -67 deg
+s:Ge/insert_wire4/DrawingStyle = "Solid"
