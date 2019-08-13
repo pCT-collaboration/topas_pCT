@@ -26,8 +26,8 @@ fi
 eval set -- "$TEMP"
 
 PHANTOM=
-HEIGHT=200
-WIDTH=400
+WIDTH=349
+HEIGHT=86.2
 DIR=
 NPROJ=1
 INCR=4
@@ -94,8 +94,7 @@ i=0
 while (( $i < $NPROJ ))
 do 
     SEED=$RANDOM
-#    echo ${START}+${i}*${INCR}
-    ANGLE=$(bc <<< ${START}+${i}*${INCR})
+    ANGLE=$(./pad $(bc <<< ${START}+${i}*${INCR}))
 #    echo '$ANGLE='$ANGLE
     BASE=jobs/${PHANTOM}_${ANGLE}
     TOPAS=${BASE}.topas
