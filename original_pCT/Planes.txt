@@ -1,0 +1,366 @@
+#
+includeFile = Calorimeter.txt
+
+# ExtraExtension moves the planes with respect to the world's center (z) 
+# If ExtraExtension = 0, then all planes are reset to its original
+# position.
+d:Ge/IncreaseDistanceBetweenCentralPlanesBy = 0 cm
+d:Ge/ExtraExtensionSet = 0.5 * Ge/IncreaseDistanceBetweenCentralPlanesBy cm
+
+#Calorimeter position
+Ge/Housing/TransZ = 400.0 mm + Ge/ExtraExtensionSet
+Ge/PlateTop/TransZ = 392.0 mm + Ge/ExtraExtensionSet
+
+s:Ge/MainFace1/Parent = "World"
+s:Ge/MainFace1/Type = "Group"
+d:Ge/MainFace1/TransZ = -1.0 * Ge/ExtraExtensionSet cm 
+
+s:Ge/MainFace2/Parent = "World"
+s:Ge/MainFace2/Type = "Group"
+d:Ge/MainFace2/TransZ = 1.0 * Ge/ExtraExtensionSet cm
+
+
+d:Ge/detector_offset = 2.9 mm
+d:Ge/detector_z_offset = 0.5 * Ge/detector_offset mm
+
+
+s:Ge/box1t/Color    = "grass"
+s:Ge/box1v/Color    = "grass"
+s:Ge/box2t/Color    = "grass"
+s:Ge/box2v/Color    = "grass"
+s:Ge/box3t/Color    = "grass"
+s:Ge/box3v/Color    = "grass"
+s:Ge/box4t/Color    = "grass"
+s:Ge/box4v/Color    = "grass"
+
+
+s:Ge/box/Parent = "World"
+s:Ge/box/Type   = "Group"
+
+d:Ge/Detector_Size_T = 349.0 mm
+d:Ge/Detector_Size_V = 86.2 mm
+d:Ge/Detector_Thickness = 400 um
+
+s:Ge/box1t/Parent = Ge/box/Parent
+s:Ge/box1t/Type	= "TsBox"
+s:Ge/box1t/Material = "Silicon"
+d:Ge/box1t/HLX      = 0.5 * Ge/Detector_Size_T mm 
+d:Ge/box1t/HLY      = 0.5 * Ge/Detector_Size_V mm
+d:Ge/box1t/HLZ      = 0.5 * Ge/Detector_Thickness micrometer 
+d:Ge/box1t/PosZ	    = -214.3 mm
+d:Ge/box1t/TransZ1   = Ge/box1t/PosZ + Ge/detector_z_offset mm
+d:Ge/box1t/TransZ   = Ge/box1t/TransZ1 - Ge/ExtraExtensionSet cm 
+d:Ge/box1t/TransY   = 0 m
+d:Ge/box1t/TransX   = 0 m
+s:Ge/box1t/DrawingStyle = "Solid"
+
+s:Ge/box1v/Parent = Ge/box/Parent
+s:Ge/box1v/Type	= "TsBox"
+s:Ge/box1v/Material = "Silicon"
+d:Ge/box1v/HLX      = 0.5 * Ge/Detector_Size_T mm 
+d:Ge/box1v/HLY      = 0.5 * Ge/Detector_Size_V mm
+d:Ge/box1v/HLZ      = 0.5 * Ge/Detector_Thickness micrometer 
+d:Ge/box1v/TransZ1   = Ge/box1t/PosZ - Ge/detector_z_offset mm
+d:Ge/box1v/TransZ   = Ge/box1v/TransZ1 - Ge/ExtraExtensionSet cm
+d:Ge/box1v/TransY   = 0 m
+d:Ge/box1v/TransX   = 0 m
+s:Ge/box1v/DrawingStyle = "Solid"
+
+s:Ge/box2t/Parent = Ge/box/Parent
+s:Ge/box2t/Type	= "TsBox"
+s:Ge/box2t/Material = "Silicon"
+d:Ge/box2t/HLX      = 0.5 * Ge/Detector_Size_T mm 
+d:Ge/box2t/HLY      = 0.5 * Ge/Detector_Size_V mm
+d:Ge/box2t/HLZ      = 0.5 * Ge/Detector_Thickness micrometer 
+d:Ge/box2t/PosZ		= -164.3 mm
+d:Ge/box2t/TransZ1   = Ge/box2t/PosZ + Ge/detector_z_offset mm
+d:Ge/box2t/TransZ   = Ge/box2t/TransZ1 - Ge/ExtraExtensionSet cm
+d:Ge/box2t/TransY   = 0 m
+d:Ge/box2t/TransX   = 0 m
+s:Ge/box2t/DrawingStyle = "Solid"
+
+s:Ge/box2v/Parent = Ge/box/Parent
+s:Ge/box2v/Type	= "TsBox"
+s:Ge/box2v/Material = "Silicon"
+d:Ge/box2v/HLX      = 0.5 * Ge/Detector_Size_T mm 
+d:Ge/box2v/HLY      = 0.5 * Ge/Detector_Size_V mm
+d:Ge/box2v/HLZ      = 0.5 * Ge/Detector_Thickness micrometer 
+d:Ge/box2v/TransZ1   = Ge/box2t/PosZ - Ge/detector_z_offset mm
+d:Ge/box2v/TransZ   = Ge/box2v/TransZ1 - Ge/ExtraExtensionSet cm
+d:Ge/box2v/TransY   = 0 m
+d:Ge/box2v/TransX   = 0 m
+s:Ge/box2v/DrawingStyle = "Solid"
+
+s:Ge/box3t/Parent = Ge/box/Parent
+s:Ge/box3t/Type	= "TsBox"
+s:Ge/box3t/Material = "Silicon"
+d:Ge/box3t/HLX      = 0.5 * Ge/Detector_Size_T mm 
+d:Ge/box3t/HLY      = 0.5 * Ge/Detector_Size_V mm
+d:Ge/box3t/HLZ      = 0.5 * Ge/Detector_Thickness micrometer 
+d:Ge/box3t/PosZ 		= 164.3 mm
+d:Ge/box3t/TransZ1   = Ge/box3t/PosZ - Ge/detector_z_offset mm
+d:Ge/box3t/TransZ   = Ge/box3t/TransZ1 + Ge/ExtraExtensionSet cm
+d:Ge/box3t/TransY   = 0 m
+d:Ge/box3t/TransX   = 0 m
+s:Ge/box3t/DrawingStyle = "Solid"
+
+s:Ge/box3v/Parent = Ge/box/Parent
+s:Ge/box3v/Type	= "TsBox"
+s:Ge/box3v/Material = "Silicon"
+d:Ge/box3v/HLX      = 0.5 * Ge/Detector_Size_T mm 
+d:Ge/box3v/HLY      = 0.5 * Ge/Detector_Size_V mm
+d:Ge/box3v/HLZ      = 0.5 * Ge/Detector_Thickness micrometer 
+d:Ge/box3v/TransZ1   = Ge/box3t/PosZ + Ge/detector_z_offset mm
+d:Ge/box3v/TransZ   = Ge/box3v/TransZ1 + Ge/ExtraExtensionSet cm
+d:Ge/box3v/TransY   = 0 m
+d:Ge/box3v/TransX   = 0 m
+s:Ge/box3v/DrawingStyle = "Solid"
+
+s:Ge/box4t/Parent = Ge/box/Parent
+s:Ge/box4t/Type	= "TsBox"
+s:Ge/box4t/Material = "Silicon"
+d:Ge/box4t/HLX      = 0.5 * Ge/Detector_Size_T mm 
+d:Ge/box4t/HLY      = 0.5 * Ge/Detector_Size_V mm
+d:Ge/box4t/HLZ      = 0.5 * Ge/Detector_Thickness micrometer 
+d:Ge/box4t/PosZ		= 214.3 mm
+d:Ge/box4t/TransZ1   = Ge/box4t/PosZ - Ge/detector_z_offset mm
+d:Ge/box4t/TransZ   = Ge/box4t/TransZ1 + Ge/ExtraExtensionSet cm
+d:Ge/box4t/TransY   = 0 m
+d:Ge/box4t/TransX   = 0 m
+s:Ge/box4t/DrawingStyle = "Solid"
+
+s:Ge/box4v/Parent = Ge/box/Parent
+s:Ge/box4v/Type	= "TsBox"
+s:Ge/box4v/Material = "Silicon"
+d:Ge/box4v/HLX      = 0.5 * Ge/Detector_Size_T mm 
+d:Ge/box4v/HLY      = 0.5 * Ge/Detector_Size_V mm
+d:Ge/box4v/HLZ      = 0.5 * Ge/Detector_Thickness micrometer 
+d:Ge/box4v/TransZ1   = Ge/box4t/PosZ + Ge/detector_z_offset mm
+d:Ge/box4v/TransZ   = Ge/box4v/TransZ1 + Ge/ExtraExtensionSet cm
+d:Ge/box4v/TransY   = 0 m
+d:Ge/box4v/TransX   = 0 m
+s:Ge/box4v/DrawingStyle = "Solid"
+
+# Housing
+
+# Main faces
+s:Ge/MainFace1A/Parent = "MainFace1"
+s:Ge/MainFace1A/Type   = "TsBox"
+s:Ge/MainFace1A/Material = "G4_Al"
+d:Ge/MainFace1A/HLX      = 268.35 mm
+d:Ge/MainFace1A/HLY      = 177.1 mm 
+d:Ge/MainFace1A/HLZ      = 1.6 mm
+d:Ge/MainFace1A/TransX   = -13.95 mm
+d:Ge/MainFace1A/TransY   = 83.39999999999998 mm
+d:Ge/MainFace1A/TransZ   = -235.9 mm
+s:Ge/MainFace1A/Hole/Parent = "MainFace1A"
+s:Ge/MainFace1A/Hole/Type   = "TsBox"
+s:Ge/MainFace1A/Hole/Material = "Air"
+d:Ge/MainFace1A/Hole/HLX      = 174.25 mm 
+d:Ge/MainFace1A/Hole/HLY      = 43.1 mm
+d:Ge/MainFace1A/Hole/HLZ      = 1.6 mm
+d:Ge/MainFace1A/Hole/TransX   = 13.95 mm
+d:Ge/MainFace1A/Hole/TransY   = -83.39999999999998 mm #-84.99999999999994 mm
+d:Ge/MainFace1A/Hole/TransZ   = 0 mm 
+
+
+s:Ge/MainFace1B/Parent = "MainFace1"
+s:Ge/MainFace1B/Type   = "TsBox"
+s:Ge/MainFace1B/Material = "G4_Al"
+d:Ge/MainFace1B/HLX      = 268.35 mm
+d:Ge/MainFace1B/HLY      = 177.1 mm
+d:Ge/MainFace1B/HLZ      = 1.6 mm
+d:Ge/MainFace1B/TransX   = -13.95 mm
+d:Ge/MainFace1B/TransY   = 83.39999999999998 mm
+d:Ge/MainFace1B/TransZ   = -143.79999999999998 mm 
+s:Ge/MainFace1B/Hole/Parent = "MainFace1B"
+s:Ge/MainFace1B/Hole/Type   = "TsBox"
+s:Ge/MainFace1B/Hole/Material = "Air"
+d:Ge/MainFace1B/Hole/HLX      = 174.25 mm 
+d:Ge/MainFace1B/Hole/HLY      = 43.1 mm
+d:Ge/MainFace1B/Hole/HLZ      = 1.6 mm
+d:Ge/MainFace1B/Hole/TransX   = 13.95 mm
+d:Ge/MainFace1B/Hole/TransY   = -83.39999999999998 mm #-84.99999999999994 mm
+d:Ge/MainFace1B/Hole/TransZ   = 0 mm 
+
+
+s:Ge/MainFace2A/Parent = "MainFace2"
+s:Ge/MainFace2A/Type   = "TsBox"
+s:Ge/MainFace2A/Material = "G4_Al"
+d:Ge/MainFace2A/HLX      = 268.35 mm
+d:Ge/MainFace2A/HLY      = 177.1 mm
+d:Ge/MainFace2A/HLZ      = 1.6 mm
+d:Ge/MainFace2A/TransX   = 13.95 mm 
+d:Ge/MainFace2A/TransY   = 83.39999999999998 mm
+d:Ge/MainFace2A/TransZ   = 143.79999999999998 mm 
+s:Ge/MainFace2A/Hole/Parent = "MainFace2A"
+s:Ge/MainFace2A/Hole/Type   = "TsBox"
+s:Ge/MainFace2A/Hole/Material = "Air"
+d:Ge/MainFace2A/Hole/HLX      = 174.25 mm 
+d:Ge/MainFace2A/Hole/HLY      = 43.1 mm
+d:Ge/MainFace2A/Hole/HLZ      = 1.6 mm
+d:Ge/MainFace2A/Hole/TransX   = -13.95 mm
+d:Ge/MainFace2A/Hole/TransY   = -83.39999999999998 mm #-84.99999999999994 mm
+d:Ge/MainFace2A/Hole/TransZ   = 0 mm 
+
+
+s:Ge/MainFace2B/Parent = "MainFace2"
+s:Ge/MainFace2B/Type   = "TsBox"
+s:Ge/MainFace2B/Material = "G4_Al"
+d:Ge/MainFace2B/HLX      = 268.35 mm
+d:Ge/MainFace2B/HLY      = 177.1 mm
+d:Ge/MainFace2B/HLZ      = 1.6 mm
+d:Ge/MainFace2B/TransX   = 13.95 mm
+d:Ge/MainFace2B/TransY   = 83.39999999999998 mm
+d:Ge/MainFace2B/TransZ   = 235.9 mm
+s:Ge/MainFace2B/Hole/Parent = "MainFace2B"
+s:Ge/MainFace2B/Hole/Type   = "TsBox"
+s:Ge/MainFace2B/Hole/Material = "Air"
+d:Ge/MainFace2B/Hole/HLX      = 174.25 mm
+d:Ge/MainFace2B/Hole/HLY      = 43.1 mm
+d:Ge/MainFace2B/Hole/HLZ      = 1.6 mm
+d:Ge/MainFace2B/Hole/TransX   = -13.95 mm
+d:Ge/MainFace2B/Hole/TransY   = -83.39999999999998 mm #-84.99999999999994 mm
+d:Ge/MainFace2B/Hole/TransZ   = 0 mm
+
+# Covering foils
+s:Ge/MainFace1A/Foil/Parent = "MainFace1"
+s:Ge/MainFace1A/Foil/Material = "G4_Al"
+s:Ge/MainFace1A/Foil/Type     = "TsBox"
+d:Ge/MainFace1A/Foil/HLX      = 190 mm
+d:Ge/MainFace1A/Foil/HLY      = 50 mm
+d:Ge/MainFace1A/Foil/HLZ      = 0.025 mm
+d:Ge/MainFace1A/Foil/TransX   = 0 mm
+d:Ge/MainFace1A/Foil/TransY   = 0 mm
+d:Ge/MainFace1A/Foil/TransZ   = -237.525 mm
+s:Ge/MainFace1A/Foil/DrawingStyle = "Solid"
+s:Ge/MainFace1A/Foil/Color        = "lightblue"
+
+
+s:Ge/MainFace1B/Foil/Parent = "MainFace1"
+s:Ge/MainFace1B/Foil/Material = "G4_Al"
+s:Ge/MainFace1B/Foil/Type     = "TsBox"
+d:Ge/MainFace1B/Foil/HLX      = 190 mm
+d:Ge/MainFace1B/Foil/HLY      = 50 mm
+d:Ge/MainFace1B/Foil/HLZ      = 0.025 mm
+d:Ge/MainFace1B/Foil/TransX   = 0 mm
+d:Ge/MainFace1B/Foil/TransY   = 0 mm
+d:Ge/MainFace1B/Foil/TransZ   = -142.17499999999998 mm
+s:Ge/MainFace1B/Foil/DrawingStyle = "Solid"
+s:Ge/MainFace1B/Foil/Color        = "lightblue"
+
+
+s:Ge/MainFace2A/Foil/Parent = "MainFace2"
+s:Ge/MainFace2A/Foil/Material = "G4_Al"
+s:Ge/MainFace2A/Foil/Type     = "TsBox"
+d:Ge/MainFace2A/Foil/HLX      = 190 mm
+d:Ge/MainFace2A/Foil/HLY      = 50 mm
+d:Ge/MainFace2A/Foil/HLZ      = 0.025 mm
+d:Ge/MainFace2A/Foil/TransX   = 0 mm
+d:Ge/MainFace2A/Foil/TransY   = 0 mm
+d:Ge/MainFace2A/Foil/TransZ   = 142.17499999999998 mm 
+s:Ge/MainFace2A/Foil/DrawingStyle = "Solid"
+s:Ge/MainFace2A/Foil/Color        = "lightblue"
+
+
+s:Ge/MainFace2B/Foil/Parent = "MainFace2"
+s:Ge/MainFace2B/Foil/Material = "G4_Al"
+s:Ge/MainFace2B/Foil/Type     = "TsBox"
+d:Ge/MainFace2B/Foil/HLX      = 190 mm
+d:Ge/MainFace2B/Foil/HLY      = 50 mm
+d:Ge/MainFace2B/Foil/HLZ      = 0.025 mm
+d:Ge/MainFace2B/Foil/TransX   = 0 mm
+d:Ge/MainFace2B/Foil/TransY   = 0 mm
+d:Ge/MainFace2B/Foil/TransZ   = 237.525 mm 
+s:Ge/MainFace2B/Foil/DrawingStyle = "Solid"
+s:Ge/MainFace2B/Foil/Color        = "lightblue"
+
+# Lateral
+b:Ge/MainFace1A/Lateral/Include = "False"
+b:Ge/MainFace1B/Lateral/Include = "False"
+b:Ge/MainFace2A/Lateral/Include = "False"
+b:Ge/MainFace2B/Lateral/Include = "False"
+
+s:Ge/MainFace1A/Lateral/Parent = "MainFace1"
+s:Ge/MainFace1A/Lateral/Material = "G4_Al"
+s:Ge/MainFace1A/Lateral/Type     = "TsBox"
+d:Ge/MainFace1A/Lateral/HLX      = 3.175 mm
+d:Ge/MainFace1A/Lateral/HLY      = 170.735 mm
+d:Ge/MainFace1A/Lateral/HLZ      = 44.449999999999996 mm 
+d:Ge/MainFace1A/Lateral/TransX   = -279.125 mm 
+d:Ge/MainFace1A/Lateral/TransY   = 91.33499999999998 mm 
+d:Ge/MainFace1A/Lateral/TransZ   = -189.84999999999997 mm 
+
+s:Ge/MainFace1B/Lateral/Parent = "MainFace1"
+s:Ge/MainFace1B/Lateral/Material = "G4_Al"
+s:Ge/MainFace1B/Lateral/Type     = "TsBox"
+d:Ge/MainFace1B/Lateral/HLX      = 3.175 mm
+d:Ge/MainFace1B/Lateral/HLY      = 170.735 mm
+d:Ge/MainFace1B/Lateral/HLZ      = 44.449999999999996 mm
+d:Ge/MainFace1B/Lateral/TransX   = 251.22500000000002 mm 
+d:Ge/MainFace1B/Lateral/TransY   = 91.33499999999998 mm 
+d:Ge/MainFace1B/Lateral/TransZ   = -189.84999999999997 mm
+
+s:Ge/MainFace2A/Lateral/Parent = "MainFace2"
+s:Ge/MainFace2A/Lateral/Material = "G4_Al"
+s:Ge/MainFace2A/Lateral/Type     = "TsBox"
+d:Ge/MainFace2A/Lateral/HLX      = 3.175 mm
+d:Ge/MainFace2A/Lateral/HLY      = 170.735 mm
+d:Ge/MainFace2A/Lateral/HLZ      = 44.449999999999996 mm
+d:Ge/MainFace2A/Lateral/TransX   = 279.125 mm
+d:Ge/MainFace2A/Lateral/TransY   = 91.33499999999998 mm 
+d:Ge/MainFace2A/Lateral/TransZ   = 189.84999999999997 mm 
+
+s:Ge/MainFace2B/Lateral/Parent = "MainFace2"
+s:Ge/MainFace2B/Lateral/Material = "G4_Al"
+s:Ge/MainFace2B/Lateral/Type     = "TsBox"
+d:Ge/MainFace2B/Lateral/HLX      = 3.175 mm
+d:Ge/MainFace2B/Lateral/HLY      = 170.735 mm
+d:Ge/MainFace2B/Lateral/HLZ      = 44.449999999999996 mm
+d:Ge/MainFace2B/Lateral/TransX   = -251.22500000000002 mm
+d:Ge/MainFace2B/Lateral/TransY   = 91.33499999999998 mm 
+d:Ge/MainFace2B/Lateral/TransZ   = 189.84999999999997 mm 
+
+
+# Base
+s:Ge/MainFace1/Plate/Parent = "MainFace1"
+s:Ge/MainFace1/Plate/Material = "G4_Al"
+s:Ge/MainFace1/Plate/Type     = "TsBox"
+d:Ge/MainFace1/Plate/HLX      = 268.35 mm
+d:Ge/MainFace1/Plate/HLY      = 6.35 mm 
+d:Ge/MainFace1/Plate/HLZ      = 44.449999999999996 mm 
+d:Ge/MainFace1/Plate/TransX   = -13.95 mm
+d:Ge/MainFace1/Plate/TransY   = -85.75000000000003 mm 
+d:Ge/MainFace1/Plate/TransZ   = -189.84999999999997 mm
+
+s:Ge/MainFace2/Plate/Parent = "MainFace2"
+s:Ge/MainFace2/Plate/Material = "G4_Al"
+s:Ge/MainFace2/Plate/Type     = "TsBox"
+d:Ge/MainFace2/Plate/HLX      = 268.35 mm
+d:Ge/MainFace2/Plate/HLY      = 6.35 mm 
+d:Ge/MainFace2/Plate/HLZ      = 44.449999999999996 mm 
+d:Ge/MainFace2/Plate/TransX   = 13.95 mm 
+d:Ge/MainFace2/Plate/TransY   = -85.75000000000003 mm 
+d:Ge/MainFace2/Plate/TransZ   = 189.84999999999997 mm
+ 
+# TOP
+s:Ge/MainFace1/Top/Parent = "MainFace1"
+s:Ge/MainFace1/Top/Material = "G4_Al"
+s:Ge/MainFace1/Top/Type     = "TsBox"
+d:Ge/MainFace1/Top/HLX      = 268.35 mm 
+d:Ge/MainFace1/Top/HLY      = 4.765 mm 
+d:Ge/MainFace1/Top/HLZ      = 47.65 mm 
+d:Ge/MainFace1/Top/TransX   = -13.95 mm 
+d:Ge/MainFace1/Top/TransY   = 266.835 mm 
+d:Ge/MainFace1/Top/TransZ   = -189.85 mm 
+
+s:Ge/MainFace2/Top/Parent = "MainFace2"
+s:Ge/MainFace2/Top/Material = "G4_Al"
+s:Ge/MainFace2/Top/Type     = "TsBox"
+d:Ge/MainFace2/Top/HLX      = 268.35 mm 
+d:Ge/MainFace2/Top/HLY      = 4.765 mm 
+d:Ge/MainFace2/Top/HLZ      = 47.65 mm
+d:Ge/MainFace2/Top/TransX   = 13.95 mm
+d:Ge/MainFace2/Top/TransY   = 266.835 mm
+d:Ge/MainFace2/Top/TransZ   = 189.85 mm 
+
