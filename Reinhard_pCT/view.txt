@@ -1,9 +1,0 @@
-s:Gr/view/Type = "OpenGl"
-d:Gr/view/Theta = 105 deg
-d:Gr/view/Phi   = 30 deg
-i:Gr/view/WindowSizeX = 1200
-i:Gr/view/WindowSizeY = 900
-b:Gr/view/IncludeAxes = "True"
-d:Gr/view/AxesSize = 10.5 cm
-u:Gr/view/Zoom  = 4
-
