@@ -1,0 +1,14 @@
+i:Ge/Bricks/Number     = 1
+d:Ge/Bricks/TwoIn      = 50.8 mm
+d:Ge/Bricks/Thickness  = Ge/Bricks/TwoIn mm * Ge/Bricks/Number
+d:Ge/Bricks/Zterm1     = -76.2 mm
+s:Ge/Bricks/Parent     = "World"
+s:Ge/Bricks/Type       = "TsBox"
+s:Ge/Bricks/Material   = "G4_WATER"
+d:Ge/Bricks/HLX        = 104.5 mm
+d:Ge/Bricks/HLY        = 60 mm
+d:Ge/Bricks/HLZ        = 0.5 * Ge/Bricks/Thickness mm
+s:Ge/Bricks/Color      = "grass"
+d:Ge/Bricks/TransX     = 0 mm
+d:Ge/Bricks/TransY     = 0 mm
+d:Ge/Bricks/TransZ     = Ge/Bricks/Zterm1 + Ge/Bricks/HLZ mm
