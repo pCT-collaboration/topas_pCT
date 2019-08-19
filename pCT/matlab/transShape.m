@@ -7,6 +7,6 @@ function newShape = transShape(shape, vector)
 %    newShape{i}.normal = planeMat.normal;
 %    newShape{i}.distance = norm(newShape{i}.point);
     newShape{i} = transPlane(planeMat, vector);
-    ++i;
-  endfor
-endfunction
+    i = i + 1;
+  end
+end

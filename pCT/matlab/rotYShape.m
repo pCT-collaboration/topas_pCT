@@ -6,6 +6,6 @@ function newShape = rotYShape(shape, angle)
     newShape{i}.point = rotYPoint(planeMat.point, angle);
     newShape{i}.normal = rotYPoint(planeMat.normal, angle);
     newShape{i}.distance = planeMat.distance;
-    ++i;
-  endfor
-endfunction
+    i = i + 1;
+  end
+end

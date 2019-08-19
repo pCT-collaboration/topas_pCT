@@ -6,10 +6,10 @@ function intersections = rayIntersectShape(ray, shape)
     if (distance < Inf)
       point2 = newPoint(ray, distance);
       if (isIn(point2, shape))
-        ++i;
+        i = i + 1;
         intersections(i).distance = distance;
         intersections(i).point = point2;
-      endif
-    endif
-  endfor
-endfunction
+      end
+    end
+  end
+end

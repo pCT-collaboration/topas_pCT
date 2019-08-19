@@ -54,11 +54,11 @@ function Preprocessing(directory, phantom_name, angle, preparer)
       Uw3(index) = Z_C(4);
 
       WEPL(index) = polyval(P, p2tOut(i,6)- p3tOut(i,6), S, MU);
-      ++index;
-    endif
-    ++i;
-  endwhile
-  --index;
+      index = index + 1;
+    end
+    i = i + 1;
+  end
+  index = index - 1;
   ofile = fopen(oFileName,'w');
   magic_number = "PCTD";
   version_id = 0;
@@ -95,4 +95,4 @@ function Preprocessing(directory, phantom_name, angle, preparer)
   fwrite(ofile, Uw3, [num2str(index) "*single"]);
   fwrite(ofile, WEPL, [num2str(index) "*single"]);
   fclose(ofile);
-endfunction
+end

@@ -7,5 +7,5 @@ function distance = intersection (ray, plane)
     distance = Inf;
   else
     distance = (plane.distance - dot(pn, rp)) / denom;
-  endif
-endfunction
+  end
+end

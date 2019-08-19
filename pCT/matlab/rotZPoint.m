@@ -3,4 +3,4 @@ function r = rotZPoint(point, angle)
   theta = angle * deg;
   rotZ = [cos(theta), sin(theta), 0; -sin(theta), cos(theta), 0; 0, 0, 1];
   r = rotZ * point;
-endfunction
+end

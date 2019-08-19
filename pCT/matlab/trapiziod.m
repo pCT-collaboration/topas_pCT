@@ -9,4 +9,4 @@ function trapizoid = trapiziod(dx1, dx2, dy1, dy2, dz)
     Plane(Point(0, -(dy1+dy2)/2.0, 0), Point(0, dz, (dy2-dy1)/2)),
     Plane(Point(0, (dy1+dy2)/2.0, 0), Point(0, -dz, (dy2-dy1)/2))
   };
-endfunction
+end

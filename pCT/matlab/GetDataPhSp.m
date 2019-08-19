@@ -2,11 +2,11 @@ function data = GetDataPhSp(fileName)
   [fid,msg] = fopen(fileName, "r");
   i = 0;
   data = zeros(1,8);
-  while (true)
+  while (i < 10000)
     [x,c] = fread(fid, 1, "single");
     if (c == 0) 
       break
-    endif
+    end
     [y,c] = fread(fid, 1, "single");
     [z,c] = fread(fid, 1, "single");
     [cosx,c] = fread(fid, 1, "single");
@@ -19,9 +19,9 @@ function data = GetDataPhSp(fileName)
     [rid,c] = fread(fid, 1, "int32");
     [eid,c] = fread(fid, 1, "int32");
     [pid,c] = fread(fid, 1, "int32");
-    if (pid != 0 || eid == 0)
+    if (pid ~= 0 || eid == 0)
       continue
-    endif
+    end
     data(eid,1) = 1;
     data(eid,2) = eid;
     data(eid,3) = x*10.0;
@@ -30,7 +30,7 @@ function data = GetDataPhSp(fileName)
     data(eid,6) = e;
     data(eid,7) = cosx;
     data(eid,8) = cosy;    
-    i += 1;
-  endwhile
+    i = i + 1;
+  end
   fclose(fid);
-endfunction
+end
