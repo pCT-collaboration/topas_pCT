@@ -4,7 +4,7 @@ usage() { echo -e "Usage: $0\n\
     --dir=<output directory>\n\
     [--width=<width of detector in mm>]\n\
     [--height=<height of detector in mm>]\n\
-    [--pdensity=<number of protons / mm^2]\n]" 1>&2; exit 1; }
+    [--pdensity=<number of protons / mm^2]\n" 1>&2; exit 1; }
 
 #set -x
 if [[ $# == 0 ]]
