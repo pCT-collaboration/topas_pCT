@@ -1,8 +1,8 @@
-function data = GetDataPhSp(fileName)
+function data = GetDataPhSp(fileName, size)
   [fid,msg] = fopen(fileName, "r");
   i = 0;
-  data = zeros(1,8);
-  while (i < 10000)
+  data = zeros(size,8);
+  while (1)
     [x,c] = fread(fid, 1, "single");
     if (c == 0) 
       break
