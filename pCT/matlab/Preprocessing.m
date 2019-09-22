@@ -14,7 +14,7 @@ function Preprocessing(directory, phantom_name, angle, preparer)
   p4vOut = GetDataPhSp(strcat(iFileName, "/Tracker4v_Out.phsp"), histories);
   sizes = [size(p1tOut, 1), size(p1vOut, 1), size(p2tOut, 1), size(p2vOut, 1), size(p3tOut, 1), size(p3vOut, 1), size(p4tOut, 1), size(p4vOut, 1)];
   imax = max(sizes);
-  oFileName = strcat(directory, "/", phantom_name, "/projection_", pad(angle), ".bin");
+  oFileName = strcat(directory, "/", phantom_name, "/bin/projection_", pad(angle), ".bin")
   Z_C = [-214.3, -164.3, 164.3, 214.3];
   i = 1;
   index = 1;
