@@ -95,7 +95,7 @@ d:Ge/insert_delrin/TransZ = 0 mm
 s:Ge/insert_delrin/DrawingStyle = "Solid"
 
 s:Ge/insert_PMMA/Parent = "Phantom"
-s:Ge/insert_PMMA/Material = "air"
+s:Ge/insert_PMMA/Material = "PMMA"
 s:Ge/insert_PMMA/Type = "TsCylinder"
 d:Ge/insert_PMMA/HL = Ge/insert/HL mm
 d:Ge/insert_PMMA/RMax = Ge/insert/RMax mm
