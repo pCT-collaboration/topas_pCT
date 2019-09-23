@@ -1,6 +1,7 @@
 *.header
 *.phsp
 *.heprep
+user.properties
 nbproject
 jobs
 octave-workspace
