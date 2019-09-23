@@ -83,49 +83,39 @@ then
     usage
 fi
 
-NPROTON=$(bc <<< $PDENSITY*$WIDTH*$HEIGHT)
+NPROTON=$(bc <<< $PDENSITY*$WIDTH*$HEIGHT/1)
 HWID=$(bc <<< $WIDTH/2)
 HHGT=$(bc <<< $HEIGHT/2)
 #echo NPROTON=$NPROTON
-
+LAST=$(bc <<< $START+$NPROJ*$INCR-$INCR)
 
 mkdir -p jobs
-i=0
-while (( $i < $NPROJ ))
-do 
-    SEED=$RANDOM
-    ANGLE=$(./pad $(bc <<< ${START}+${i}*${INCR}))
-#    echo '$ANGLE='$ANGLE
-    BASE=jobs/${PHANTOM}_${ANGLE}
-    TOPAS=${BASE}.topas
-#    echo '$TOPAS='$TOPAS
-    QSUB=${BASE}.qsub
-#    echo '$QSUB='$QSUB
-    sed -e "s/PHANTOM/${PHANTOM}/" -e "s/NPROTON/${NPROTON}/" -e "s/ANGLE/${ANGLE}/" \
-        -e "s;DIR;${DIR};" -e "s/HHGT/$HHGT/" -e "s/HWID/$HWID/" -e "s/SEED/$SEED/" \
-        < Template.topas > $TOPAS
-    if [[ $NPROTON < 10000 ]]
-    then
-        mkdir -p $DIR/$PHANTOM/$ANGLE
-        topas $TOPAS
-        python InputEdiffBin.py --dir=$DIR --angle=$ANGLE --phantom=$PHANTOM --preparer="$PREPARER" --histories=$NPROTON
-    else
-        cat >${QSUB} <<END
+LOGDIR=${DIR}/${PHANTOM}/Generate_log
+mkdir -p ${LOGDIR}
+SEED=$RANDOM
+QSUB=jobs/Gen_${PHANTOM}.qsub
+cat >${QSUB} <<END
 #!/bin/sh
-#PBS -o ${DIR}/${PHANTOM}_${ANGLE}.out
-#PBS -e ${DIR}/${PHANTOM}_${ANGLE}.err
+#PBS -J $START-$LAST:$INCR
+#PBS -o ${LOGDIR}/topas_^array_index^.out
+#PBS -e ${LOGDIR}/topas_^array_index^.err
 
 echo "Job working directory: ${PWD}"
 cd ${PWD}
 pwd
 
 alias topas=$HOME/topas/topas
+echo PBS_ARRAY_INDEX=\$PBS_ARRAY_INDEX
+ANGLE=\$(./pad \$PBS_ARRAY_INDEX)
+echo ANGLE=\${ANGLE}
+BASE=jobs/${PHANTOM}_\${ANGLE}
+echo BASE=\$BASE
+TOPAS=\${BASE}.topas
+sed -e "s/PHANTOM/${PHANTOM}/" -e "s/NPROTON/${NPROTON}/" -e "s/ANGLE/\${ANGLE}/" \
+    -e "s;DIR;${DIR};" -e "s/HHGT/$HHGT/" -e "s/HWID/$HWID/" -e "s/SEED/$SEED/" \
+    < Template.topas > \$TOPAS
 
-mkdir -p $DIR/$PHANTOM/$ANGLE
-topas $TOPAS
-python InputEdiffBin.py --dir=$DIR --angle=$ANGLE --phantom=$PHANTOM --preparer="$PREPARER" --histories=$NPROTON
+mkdir -p $DIR/$PHANTOM/\$ANGLE
+topas \$TOPAS
 END
-        qsub $QSUB
-    fi
-    i=$(bc <<< $i+1)
-done
+qsub $QSUB
