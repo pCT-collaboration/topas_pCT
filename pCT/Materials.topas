@@ -55,3 +55,8 @@ d:Ma/delrin/Density = 1.42 g/cm3
 sv:Ma/WC/Components = 2 "Carbon" "Tungsten"
 uv:Ma/WC/Fractions = 2 0.5 0.5
 d:Ma/WC/Density = 15.8 g/cm3
+
+# Trabecular Bone
+sv:Ma/TrabecularBone/Components = 12 "Hydrogen"   "Carbon"   "Nitrogen"  "Oxygen"   "Sodium"  "Magnesium"  "Phosphorus"   "Sulfur"   "Chlorine"  "Potassium"   "Calcium"  "Iron"
+uv:Ma/TrabecularBone/Fractions = 12 0.085 0.404 0.058 0.367 0.001 0.001 0.034 0.002 0.002 0.001 0.044 0.001
+d:Ma/TrabecularBone/Density = 1.159 g/cm3
