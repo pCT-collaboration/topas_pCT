@@ -1,0 +1,11 @@
+includeFile = Materials.topas
+
+s:Ge/ForbildThorax/Type       = "ForbildThorax"
+d:Ge/ForbildThorax/TransX=0. m
+d:Ge/ForbildThorax/TransY=0. m
+d:Ge/ForbildThorax/TransZ=0. m
+d:Ge/ForbildThorax/RotX=90. deg
+d:Ge/ForbildThorax/RotY=0. deg
+d:Ge/ForbildThorax/RotZ=0. deg
+s:Ge/ForbildThorax/Parent="World"
+d:Ge/ForbildThorax/scale = 0.4 cm

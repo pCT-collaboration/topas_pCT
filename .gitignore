@@ -5,3 +5,6 @@ user.properties
 nbproject
 jobs
 octave-workspace
+*ake*
+extensions
+topas
