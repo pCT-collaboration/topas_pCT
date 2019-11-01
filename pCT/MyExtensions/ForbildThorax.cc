@@ -362,6 +362,7 @@ G4VPhysicalVolume* ForbildThorax::Construct() {
         CreatePhysicalVolume("vertebra_7", vertebra_7, noRot, position, fEnvelopePhys);
     }
     
+#if 0
     G4RotationMatrix* rib_left_rotation = new G4RotationMatrix(-1.72757, -1.47567, 1.72757);
     G4RotationMatrix rib_left_rotation_inverse = rib_left_rotation->inverse();
     G4ThreeVector *rib_left_position = scaledThreeVector(5.716814809004056, 8.559508872121505, -5.230810921852053);
@@ -917,6 +918,7 @@ G4VPhysicalVolume* ForbildThorax::Construct() {
     
     G4LogicalVolume* rib_right_marrow = CreateLogicalVolume("rib_right_marrow", marrow_material, rib_right_marrow_shape);
     CreatePhysicalVolume("rib_right_marrow_1", rib_right_marrow, noRot, new G4ThreeVector(), rib_right_1_phys);
+#endif
 
 	InstantiateChildren(fEnvelopePhys);
 	return fEnvelopePhys;
