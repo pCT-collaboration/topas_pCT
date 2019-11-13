@@ -93,7 +93,7 @@ G4VPhysicalVolume* ForbildThorax::Construct() {
             size->getX(),
             size->getY(),
             size->getZ());
-    G4String lung_material = "G4_LUNG_ICRP";
+    G4String lung_material = "G4_AIR";
     G4RotationMatrix* inverse = noRot;
     G4RotationMatrix* new_rotation = noRot;
     G4ThreeVector* position = scaledThreeVector(10.5, 0.0, -5.5);
