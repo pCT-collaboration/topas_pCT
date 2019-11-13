@@ -62,11 +62,12 @@ G4VPhysicalVolume* ForbildThorax::Construct() {
             size->getX(),
             size->getY(),
             size->getZ());
+    size = scaledThreeVector(5.0, 5.0, 7.5);
     G4VSolid* arm = new G4Tubs(
             "arm",
             0.0,
-            5.0 * cm,
-            7.5 * cm,
+            size->getX(),
+            size->getZ(),
             0.0,
             2.0 * pi);
     G4RotationMatrix* rotation = noRot;
