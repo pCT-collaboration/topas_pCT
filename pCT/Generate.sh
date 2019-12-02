@@ -104,18 +104,25 @@ echo "Job working directory: ${PWD}"
 cd ${PWD}
 pwd
 
-alias topas=$HOME/topas/topas
+alias topas=$PWD/topas
 echo PBS_ARRAY_INDEX=\$PBS_ARRAY_INDEX
 ANGLE=\$(./pad \$PBS_ARRAY_INDEX)
-echo ANGLE=\${ANGLE}
+echo ANGLE=\$ANGLE
+if (( \$PBS_ARRAY_INDEX > 270 ))
+then
+  ROTZ=\$(bc <<< 360+270-\$PBS_ARRAY_INDEX)
+else
+  ROTZ=\$(bc <<< 270-\$PBS_ARRAY_INDEX)
+fi
+echo ROTZ=\${ANGLE2}
 BASE=jobs/${PHANTOM}_\${ANGLE}
 echo BASE=\$BASE
 TOPAS=\${BASE}.topas
-sed -e "s/PHANTOM/${PHANTOM}/" -e "s/NPROTON/${NPROTON}/" -e "s/ANGLE/\${ANGLE}/" \
+sed -e "s/PHANTOM/${PHANTOM}/" -e "s/NPROTON/${NPROTON}/" -e "s/ROTZ/\${ROTZ}/" -e "s/ANGLE/\${ANGLE}/" \
     -e "s;DIR;${DIR};" -e "s/HHGT/$HHGT/" -e "s/HWID/$HWID/" -e "s/SEED/$SEED/" \
     < Template.topas > \$TOPAS
 
 mkdir -p $DIR/$PHANTOM/\$ANGLE
-topas \$TOPAS
+./topas \$TOPAS
 END
 qsub $QSUB
