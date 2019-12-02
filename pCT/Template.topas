@@ -21,12 +21,13 @@ d:So/Beam/HHeight = HHGT mm
 i:So/NProtons = NPROTON
 d:Ge/Detector/Width = 349.0 mm
 d:Ge/Detector/Height = 86.2 mm
-d:Ge/Phantom/Angle = ANGLE deg
+d:Ge/Phantom/Angle = ROTZ deg
 s:Ge/Phantom/IntegerAngle = "ANGLE"
 d:Ge/Phantom/RotZ = Ge/Phantom/Angle deg
 s:Sc/Output/BaseDirectory = "DIR/PHANTOM/"
 s:Sc/Output/Directory0 = Sc/Output/BaseDirectory + Ge/Phantom/IntegerAngle
 s:Sc/Output/Directory = Sc/Output/Directory0 + "/"
+s:Gr/view/FileName = Sc/Output/Directory + "view"
 
 # The following is for safety check. As the simulation is already tested
 # then there is not need to check for overlaps
