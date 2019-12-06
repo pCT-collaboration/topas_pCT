@@ -91,11 +91,6 @@ LAST=$(bc <<< $START+$NPROJ*$INCR-$INCR)
 BINDIR=${DIR}/${PHANTOM}/bin
 mkdir -p ${BINDIR}
 
-MATLAB=$(type -P matlab) && MATLAB="$MATLAB -nodisplay -nosplash -r"
-test -z "$MATLAB" && MATLAB=$(type -P octave) && MATLAB="$MATLAB --no-gui --eval"
-test -z "$MATLAB" && ( echo "either octave or matlab is required" ; exit 1 )
-echo $MATLAB
-
 mkdir -p jobs
 LOGDIR=${DIR}/${PHANTOM}/Preprocessing_log
 mkdir -p ${LOGDIR}
@@ -116,6 +111,6 @@ pwd
 echo PBS_ARRAY_INDEX=\$PBS_ARRAY_INDEX
 ANGLE=\$PBS_ARRAY_INDEX
 echo ANGLE=\${ANGLE}
-$MATLAB "Preprocessing(\"$DIR\", \"$PHANTOM\", \${ANGLE}, \"$PREPARER\"); exit"
+python3 Preprocessing.py --dir=$DIR --phantom=$PHANTOM --angle=$ANGLE --preparer=$PREPARER
 END
 qsub $QSUB
