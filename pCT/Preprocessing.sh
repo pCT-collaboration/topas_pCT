@@ -33,7 +33,7 @@ NPROJ=1
 INCR=4
 START=0
 PDENSITY=100
-PREPARER=$(grep "^$USER:" /etc/passwd | cut -f5 -d:)
+PREPARER=$USER
 
 # extract options and their arguments into variables.
 while true ; do
