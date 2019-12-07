@@ -11,22 +11,22 @@ function [P, S, MU] = Calibration(directory)
   w = [];
   e = [];
   index = 0;
-  iFileName = strcat(directory, "/", num2str(bricks));
-  histories = getSize(strcat(iFileName, "/Tracker1t_Out.header"));
   for bricks = 0:4
+    iFileName = strcat(directory, "/Calibration_", num2str(bricks));
+    histories = min(getSize(strcat(iFileName, "/Tracker1t_Out.header")), 5000);
     brick_hx = dx2;
     brick_hy = dy2;
     brick_hz = 25.4 * bricks;
     brick = box(brick_hx, brick_hy, brick_hz);
     brick = transShape(brick, Point(0, 0, transz + dz + brick_hz));
-    p1tOut = GetDataPhSp(strcat(iFileName, "/Tracker1t_Out.phsp"), histories;
-    p1vOut = GetDataPhSp(strcat(iFileName, "/Tracker1v_Out.phsp"), histories;
-    p2tOut = GetDataPhSp(strcat(iFileName, "/Tracker2t_Out.phsp"), histories;
-    p2vOut = GetDataPhSp(strcat(iFileName, "/Tracker2v_Out.phsp"), histories;
-    p3tOut = GetDataPhSp(strcat(iFileName, "/Tracker3t_Out.phsp"), histories;
-    p3vOut = GetDataPhSp(strcat(iFileName, "/Tracker3v_Out.phsp"), histories;
-    p4tOut = GetDataPhSp(strcat(iFileName, "/Tracker4t_Out.phsp"), histories;
-    p4vOut = GetDataPhSp(strcat(iFileName, "/Tracker4v_Out.phsp"), histories;
+    p1tOut = GetDataPhSp(strcat(iFileName, "/Tracker1t_Out.phsp"), histories);
+    p1vOut = GetDataPhSp(strcat(iFileName, "/Tracker1v_Out.phsp"), histories);
+    p2tOut = GetDataPhSp(strcat(iFileName, "/Tracker2t_Out.phsp"), histories);
+    p2vOut = GetDataPhSp(strcat(iFileName, "/Tracker2v_Out.phsp"), histories);
+    p3tOut = GetDataPhSp(strcat(iFileName, "/Tracker3t_Out.phsp"), histories);
+    p3vOut = GetDataPhSp(strcat(iFileName, "/Tracker3v_Out.phsp"), histories);
+    p4tOut = GetDataPhSp(strcat(iFileName, "/Tracker4t_Out.phsp"), histories);
+    p4vOut = GetDataPhSp(strcat(iFileName, "/Tracker4v_Out.phsp"), histories);
     i = 1;
     sizes = [size(p1tOut,1), size(p1vOut,1), size(p2tOut,1), size(p2vOut,1), size(p3tOut,1), size(p3vOut,1), size(p4tOut,1), size(p4vOut,1)];
     imax = min(sizes);
@@ -112,7 +112,12 @@ function [P, S, MU] = Calibration(directory)
 %  x = 0:160;
 %  plot(x, polyval(P, x, S, MU), "color", "black");
 %  hold off
-  save P.mat P
-  save S.mat S
-  save MU.mat MU
+  P
+  MU
+  mupid = fopen("MU.bin", "w");
+  fwrite(mupid, size(MU,1), "int16");
+  fwrite(mupid, MU, "double");
+  pfid = fopen("P.bin", "w");
+  fwrite(pfid, size(P,2), "int16");
+  fwrite(pfid, P, "double");
 end

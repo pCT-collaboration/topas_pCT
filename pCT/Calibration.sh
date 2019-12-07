@@ -23,7 +23,7 @@ eval set -- "$TEMP"
 HEIGHT=86.2
 WIDTH=349.0
 DIR=
-PDENSITY=100
+PDENSITY=1
 
 # extract options and their arguments into variables.
 while true ; do
@@ -82,26 +82,9 @@ do
     then
         sed -i '/Bricks.topas/d' $TOPAS
     fi
-    if [[ $NPROTON < 50000 ]]
-    then
-        mkdir -p $DIR/Calibration_$i
-        $topas $TOPAS
-    else
-        cat >${QSUB} <<END
-#!/bin/sh
-#PBS -o ${DIR}/${PHANTOM}_${ANGLE}.out
-#PBS -e ${DIR}/${PHANTOM}_${ANGLE}.err
-
-echo "Job working directory: ${PWD}"
-cd ${PWD}
-pwd
-
-alias topas=$HOME/topas/topas
-
-mkdir -p $DIR/Calibration_$i
-topas $TOPAS
-END
-        qsub $QSUB
-    fi
+    mkdir -p $DIR/Calibration_$i
+    $topas $TOPAS
     i=$(bc <<< $i+1)
 done
+cd matlab
+matlab -nodisplay -nosplash -r "Calibration(\"$DIR\") ; exit"

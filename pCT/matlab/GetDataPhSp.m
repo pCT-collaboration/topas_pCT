@@ -2,7 +2,7 @@ function data = GetDataPhSp(fileName, size)
   [fid,msg] = fopen(fileName, "r");
   i = 0;
   data = zeros(size,8);
-  while (1)
+  while (i < size)
     [x,c] = fread(fid, 1, "single");
     if (c == 0) 
       break
