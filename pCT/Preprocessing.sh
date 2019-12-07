@@ -102,15 +102,14 @@ cat >${QSUB} <<END
 #PBS -o ${LOGDIR}/topas_^array_index^.out
 #PBS -e ${LOGDIR}/topas_^array_index^.err
 
-echo hostname=$(hostname) 1>&2
-module load matlab
 module list
 echo "Job working directory: ${PWD}"
-cd ${PWD}/matlab
+cd $PWD
 pwd
 echo PBS_ARRAY_INDEX=\$PBS_ARRAY_INDEX
-ANGLE=\$PBS_ARRAY_INDEX
+ANGLE=\$(pad \$PBS_ARRAY_INDEX)
 echo ANGLE=\${ANGLE}
-python3 Preprocessing.py --dir=$DIR --phantom=$PHANTOM --angle=$ANGLE --preparer=$PREPARER
+module load python/3.7.2
+python3 Preprocessing.py --dir=$DIR --phantom=$PHANTOM --angle=\$ANGLE --preparer=$PREPARER
 END
 qsub $QSUB
